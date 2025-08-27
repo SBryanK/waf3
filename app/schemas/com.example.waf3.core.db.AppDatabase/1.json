@@ -1,0 +1,168 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "e513f2bcc5d9455c4136505390739522",
+    "entities": [
+      {
+        "tableName": "test_session",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `target` TEXT NOT NULL, `path` TEXT NOT NULL, `createdAtMs` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "target",
+            "columnName": "target",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "path",
+            "columnName": "path",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAtMs",
+            "columnName": "createdAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "test_result",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sessionId` INTEGER NOT NULL, `testId` TEXT NOT NULL, `testName` TEXT NOT NULL, `category` TEXT NOT NULL, `statusCode` INTEGER, `statusMessage` TEXT, `latencyMs` INTEGER, `finalUrl` TEXT, `requestId` TEXT, `headersJson` TEXT NOT NULL, `bodyPreview` TEXT, `tlsProtocol` TEXT, `tlsCipher` TEXT, `alpn` TEXT, `verdict` TEXT NOT NULL, `error` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sessionId",
+            "columnName": "sessionId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "testId",
+            "columnName": "testId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "testName",
+            "columnName": "testName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "statusCode",
+            "columnName": "statusCode",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "statusMessage",
+            "columnName": "statusMessage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "latencyMs",
+            "columnName": "latencyMs",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "finalUrl",
+            "columnName": "finalUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "requestId",
+            "columnName": "requestId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "headersJson",
+            "columnName": "headersJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bodyPreview",
+            "columnName": "bodyPreview",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tlsProtocol",
+            "columnName": "tlsProtocol",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tlsCipher",
+            "columnName": "tlsCipher",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "alpn",
+            "columnName": "alpn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "verdict",
+            "columnName": "verdict",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "error",
+            "columnName": "error",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e513f2bcc5d9455c4136505390739522')"
+    ]
+  }
+}

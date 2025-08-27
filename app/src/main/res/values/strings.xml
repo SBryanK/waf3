@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">EdgeOne Security Tester</string>
+    <string name="confirm_tests">Confirm Tests</string>
+    <string name="run_tests">Run Tests</string>
+    <string name="history">History</string>
+    <string name="results">Results</string>
+    <string name="tests">Security Tests</string>
+    <string name="quota">Quota</string>
+    <string name="target_hint">Target (https://example.com)</string>
+    <string name="path_hint">Path (/index.html)</string>
+    <string name="auto_refresh">Auto-refresh</string>
+    <string name="select_all">Select All</string>
+    <string name="clear_all">Clear All</string>
+    <string name="selected_count">%1$d selected</string>
+    <string name="connected">Connected</string>
+    <string name="failed">Failed</string>
+</resources>
